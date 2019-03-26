@@ -6,7 +6,8 @@
     "content_scripts": [{
         "matches": ["https://apps.admissions.yale.edu/portal/admits?cmd=profile_edit*"],
         "js": ["scripts.js"],
-        "css": ["style.css"]
+        "css": ["style.css"],
+        "run_at": "document_idle"
     }],
     "permissions": ["activeTab"]
 }
