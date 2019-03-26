@@ -1,15 +1,18 @@
 console.log('customprofile running');
 
 function changeListener(e) {
-    console.log('Changed');
-    select = document.getElementById(select.getAttribute('data-target'));
+    select = document.getElementById(e.target.getAttribute('data-target'));
+    console.log(select);
     for (option of select.childNodes) {
+        console.log(option);
         select.removeChild(option);
     }
     newOption = document.createElement('option');
     newOption.value = e.target.value;
     newOption.setAttribute('data-text', e.target.value);
     newOption.textContent = e.target.value;
+    select.appendChild(newOption);
+    select.value = e.target.value;
 }
 
 var insertButton = document.createElement('button');
@@ -23,7 +26,7 @@ insertButton.addEventListener('click', function() {
         textInput.setAttribute('data-target', select.id);
         // TODO: somehow support getting custom answers rather than them not being populated
         textInput.value = select.value;
-        textInput.addEventListener('input', changeListener);
+        textInput.addEventListener('change', changeListener);
         select.parentElement.appendChild(textInput);
     }
 });
