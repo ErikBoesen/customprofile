@@ -1,0 +1,12 @@
+{
+    "manifest_version": 2,
+    "name": "customprofile",
+    "description": "Allow submission of custom answers on Yale's admitted student profiles",
+    "version": "1.0",
+    "content_scripts": [{
+        "matches": ["https://apps.admissions.yale.edu/portal/admits?cmd=profile_edit*"],
+        "js": ["scripts.js"],
+        "css": ["style.css"]
+    }],
+    "permissions": ["activeTab"]
+}
