@@ -3,9 +3,8 @@ console.log('customprofile running');
 function changeListener(e) {
     select = document.getElementById(e.target.getAttribute('data-target'));
     console.log(select);
-    for (option of select.childNodes) {
-        console.log(option);
-        select.removeChild(option);
+    while (select.firstChild) {
+        select.removeChild(select.firstChild);
     }
     newOption = document.createElement('option');
     newOption.value = e.target.value;
@@ -25,7 +24,6 @@ insertButton.addEventListener('click', function() {
         textInput.type = 'text';
         textInput.setAttribute('data-target', select.id);
         // TODO: somehow support getting custom answers rather than them not being populated
-        textInput.value = select.value;
         textInput.addEventListener('change', changeListener);
         select.parentElement.appendChild(textInput);
     }
