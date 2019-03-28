@@ -10,7 +10,7 @@
         "run_at": "document_idle"
     }],
     "icons": {
-        "128": "icon.png"
+        "128": "icons/128.png"
     },
     "permissions": ["activeTab"]
 }
