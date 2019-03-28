@@ -1,0 +1,12 @@
+/* Tabs at top, at the end of which we insert the button */
+.subtabs {
+    height: 50px !important;
+}
+#custom-button {
+    display: block;
+    margin: 10px 0;
+    background: #00356b;
+    z-index: 200;
+    padding: 10px;
+    color: white;
+}

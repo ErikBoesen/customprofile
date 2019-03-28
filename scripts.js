@@ -15,6 +15,7 @@ function inputListener(e) {
 }
 
 var insertButton = document.createElement('button');
+insertButton.id = 'custom-button';
 insertButton.textContent = 'Enable custom responses';
 console.log(insertButton);
 insertButton.addEventListener('click', function() {
