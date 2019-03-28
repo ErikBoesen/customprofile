@@ -29,6 +29,7 @@ insertButton.addEventListener('click', function() {
         textInput.addEventListener('input', inputListener);
         textInput.value = select.value;
         select.parentElement.appendChild(textInput);
+        select.classList.add('hidden-select');
     }
     this.disabled = true;
     this.textContent = 'Simply edit text inputs and dropdowns will update accordingly!'

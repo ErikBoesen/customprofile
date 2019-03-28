@@ -11,6 +11,9 @@
     font-size: 16px;
     color: white;
 }
+.hidden-select {
+    display: none;
+}
 .custom-input {
     display: block;
     min-width: 300px;
