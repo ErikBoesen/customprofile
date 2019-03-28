@@ -23,11 +23,14 @@ insertButton.addEventListener('click', function() {
     for (select of selects) {
         var textInput = document.createElement('input');
         textInput.type = 'text';
+        textInput.className = 'custom-input';
         textInput.setAttribute('data-target', select.id);
         // TODO: somehow support getting custom answers rather than them not being populated
         textInput.addEventListener('input', inputListener);
+        textInput.value = select.value;
         select.parentElement.appendChild(textInput);
     }
+    this.disabled = true;
 });
 document.getElementsByClassName('subtabs')[0].appendChild(insertButton);
 console.log(document.getElementsByClassName('subtabs'));
