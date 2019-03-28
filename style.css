@@ -13,4 +13,5 @@
 }
 .custom-input {
     display: block;
+    min-width: 300px;
 }
