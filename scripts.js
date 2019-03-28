@@ -21,14 +21,13 @@ console.log(insertButton);
 insertButton.addEventListener('click', function() {
     var selects = document.querySelectorAll('.form_responses select');
     for (select of selects) {
-        var textInput = document.createElement('input');
-        textInput.type = 'text';
-        textInput.className = 'custom-input';
-        textInput.setAttribute('data-target', select.id);
+        var textarea = document.createElement('textarea');
+        textarea.className = 'custom-input';
+        textarea.setAttribute('data-target', select.id);
         // TODO: somehow support getting custom answers rather than them not being populated
-        textInput.addEventListener('input', inputListener);
-        textInput.value = select.value;
-        select.parentElement.appendChild(textInput);
+        textarea.addEventListener('input', inputListener);
+        textarea.value = select.value;
+        select.parentElement.appendChild(textarea);
         select.classList.add('hidden-select');
     }
     this.disabled = true;
