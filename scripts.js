@@ -31,6 +31,7 @@ insertButton.addEventListener('click', function() {
         select.parentElement.appendChild(textInput);
     }
     this.disabled = true;
+    this.textContent = 'Simply edit text inputs and dropdowns will update accordingly!'
 });
 document.getElementsByClassName('subtabs')[0].appendChild(insertButton);
 console.log(document.getElementsByClassName('subtabs'));
