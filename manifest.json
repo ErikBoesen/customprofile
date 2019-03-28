@@ -9,5 +9,8 @@
         "css": ["style.css"],
         "run_at": "document_idle"
     }],
+    "icons": {
+        "128": "icon.png"
+    },
     "permissions": ["activeTab"]
 }
