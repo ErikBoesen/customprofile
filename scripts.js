@@ -12,6 +12,7 @@ function inputListener(e) {
     newOption.textContent = e.target.value;
     select.appendChild(newOption);
     select.value = e.target.value;
+    localStorage["profileentry_" + e.target.getAttribute('data-target')] = e.target.value;
 }
 
 var insertButton = document.createElement('button');
@@ -28,6 +29,10 @@ insertButton.addEventListener('click', function() {
         // TODO: somehow support getting custom answers rather than them not being populated
         textInput.addEventListener('input', inputListener);
         textInput.value = select.value;
+        var storageKey = "profileentry_" + select.id;
+        if ((!textInput.value) && localStorage[storageKey]) {
+            textInput.value = localStorage[storageKey];
+        }
         select.parentElement.appendChild(textInput);
         select.classList.add('hidden-select');
     }
