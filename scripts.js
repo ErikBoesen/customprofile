@@ -1,18 +1,21 @@
 console.log('customprofile running');
 
-function inputListener(e) {
-    select = document.getElementById(e.target.getAttribute('data-target'));
-    console.log(select);
+function setSelect(select, value) {
     while (select.firstChild) {
         select.removeChild(select.firstChild);
     }
     newOption = document.createElement('option');
-    newOption.value = e.target.value;
-    newOption.setAttribute('data-text', e.target.value);
-    newOption.textContent = e.target.value;
+    newOption.value = value;
+    newOption.setAttribute('data-text', value);
+    newOption.textContent = value;
     select.appendChild(newOption);
-    select.value = e.target.value;
-    localStorage["profileentry_" + e.target.getAttribute('data-target')] = e.target.value;
+    select.value = value;
+}
+
+function inputListener(e) {
+    select = document.getElementById(e.target.getAttribute('data-target'));
+    setSelect(select, e.target.value);
+    localStorage["profileentry_" + select.id] = e.target.value;
 }
 
 var insertButton = document.createElement('button');
@@ -32,6 +35,7 @@ insertButton.addEventListener('click', function() {
         var storageKey = "profileentry_" + select.id;
         if ((!textInput.value) && localStorage[storageKey]) {
             textInput.value = localStorage[storageKey];
+            setSelect(select, localStorage[storageKey]);
         }
         select.parentElement.appendChild(textInput);
         select.classList.add('hidden-select');
